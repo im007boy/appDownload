@@ -1,6 +1,9 @@
 {
   "name": "WebStoreDownload",
-  "background_page": "background.html",
+  "manifest_version":2,
+  "background": {
+    "scripts": ["background.js"]
+  },
   "options_page": "download.html",
   "permissions": [
     "tabs",
@@ -8,5 +11,5 @@
     "clipboardWrite",
 	"contextMenus"
   ],
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

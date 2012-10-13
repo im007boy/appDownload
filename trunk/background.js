@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<!--
-/*************************************************************************
-* Copyright (c) 2011 im007boy@gmail.com. All rights reserved.            *
-* Use of this source code is governed by a GNU-style license that can be *
-* found in the LICENSE file.                                             *
-*************************************************************************/
--->
-
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>DownloadExtension</title>
-<script>
     var bg = (function(){
         var appUrl = '';
         var options = ['showLink', 'autoCopy', 'autoDownload'];
@@ -31,7 +17,7 @@
                     /*
                     * from Extension Gallery and Web Store Inspector
                     * */
-                    var match = tab.url.match(/^https:\/\/chrome.google.com\/(?:extensions|webstore)\/detail\/(\w+)/);
+                    var match = tab.url.match(/^https:\/\/chrome.google.com\/(?:extensions|webstore)\/detail\/[^/]+\/(\w+)/);
                     if(match != null && match.length == 2) {
                         appUrl = "http://clients2.google.com/service/update2/crx?response=redirect&x=id%3D" + match[1] + "%26uc%26lang%3Den-US&prod=chrome";
 
@@ -68,10 +54,3 @@
             }
         };
     })();
-
-</script>
-</head>
-<body>
-<input id="copy" type="text" />
-</body>
-</html>
